@@ -26,7 +26,7 @@ requirements = [
 
 setup(
     name='coolname-hash',
-    version='1.1.0',
+    version='1.1.1',
     description="Human-readable pseudo-hash, based on coolname.",
     long_description=readme + '\n\n' + history,
     author="Alexander Lukanin",
