@@ -22,7 +22,7 @@ def pseudohash_tuple_v1(arg):
         arg = str(arg).encode('utf8')
     elif not isinstance(arg, bytes):
         raise ValueError('Unexpected type (must be int, str or bytes): {!r}'.format(arg))
-    i = int.from_bytes(md5(arg).digest(), byteorder='big')
+    i = int.from_bytes(md5(arg).digest()[:8], byteorder='little')
     # Following is mostly copypaste from generate(), with minor changes and optimizations
     lst = _lst
     while True:
