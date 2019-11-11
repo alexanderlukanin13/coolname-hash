@@ -9,18 +9,18 @@ For any integer/str/bytes, return deterministic human-readable string generated 
 .. code-block:: python
 
     >>> from coolname_hash import pseudohash_slug_v1 as pseudohash_slug
-    >>> pseudohash_slug(100)
-    'terrestrial-poetic-bobcat-of-admiration'
+    >>> pseudohash_slug(123)
+    'hissing-sage-buzzard-of-faith'
     >>> pseudohash_slug('qwerty')
-    'crafty-proficient-duck-of-election'
+    'jumping-kickass-bumblebee-of-chaos'
     >>> pseudohash_slug('\x00\x01\xFF')
-    'capable-affable-peccary-of-purring'
+    'smooth-offbeat-hummingbird-from-avalon'
 
 Or you can get tuples:
 
     >>> from coolname_hash import pseudohash_tuple_v1 as pseudohash_tuple
-    >>> pseudohash_tuple(123)
-    ['fancy', 'private', 'oarfish', 'from', 'lemuria']
+    >>> pseudohash_tuple('foobar')
+    ['huge', 'beneficial', 'chihuahua', 'of', 'refinement']
 
 **WARNING:** Random sequence varies from version to version, so make sure you pin version exactly in your project's requirements file.
 Don't just use ``coolname_hash``, use ``coolname_hash==1.1.1``.
