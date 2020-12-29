@@ -32,7 +32,7 @@ setup(
     author="Alexander Lukanin",
     author_email='alexander.lukanin.13@gmail.com',
     url='https://github.com/alexanderlukanin13/coolname_hash',
-    py_modules=[
+    py_packages=[
         'coolname_hash',
     ],
     cmdclass=cmdclass,
@@ -40,7 +40,7 @@ setup(
     install_requires=requirements,
     license="BSD",
     zip_safe=True,
-    keywords=['coolname', 'hash'],
+    keywords=['coolname', 'hash', 'pseudohash'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
