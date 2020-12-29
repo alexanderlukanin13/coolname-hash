@@ -1,6 +1,7 @@
 from hashlib import md5
+from typing import Union
 
-from coolname.impl import _default
+from coolname.impl import _default  # noqa
 
 # Use fields and methods of default generator directly
 _lst = _default._lists[None]
@@ -10,9 +11,9 @@ assert _default._max_slug_length == 50  # optimization
 del _default
 
 
-def pseudohash_tuple_v1(arg):
+def pseudohash_tuple_v1(arg: Union[int, str, bytes]) -> tuple:
     """
-    Similar to generate(), but returns deterministic result
+    Similar to coolname.generate(), but returns deterministic result
     for the given argument (int, str or bytes).
     """
     # NOTE: hash will be the same for 123, '123' and b'123' - this is intentional
@@ -37,9 +38,9 @@ def pseudohash_tuple_v1(arg):
         return result
 
 
-def pseudohash_slug_v1(arg):
+def pseudohash_slug_v1(arg: Union[int, str, bytes]) -> str:
     """
-    Similar to generate_slug(), but returns deterministic result
+    Similar to coolname.generate_slug(), but returns deterministic result
     for the given argument (int, str or bytes).
     """
     return '-'.join(pseudohash_tuple_v1(arg))
