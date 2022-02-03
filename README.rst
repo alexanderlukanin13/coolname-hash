@@ -23,7 +23,8 @@ Or you can get tuples:
     ['huge', 'beneficial', 'chihuahua', 'of', 'refinement']
 
 **WARNING:** Random sequence varies from version to version, so make sure you pin version exactly in your project's requirements file.
-Don't just use ``coolname_hash``, use ``coolname_hash==1.1.1``.
+Don't just use ``coolname_hash``, use ``coolname_hash==1.1.1``. Otherwise your code will fail with ``ImportError``.
+Also, don't specify ``coolname`` in your requirements file at all - ``coolname_hash`` always pins specific version of it.
 
 Caveats for variable types:
 
