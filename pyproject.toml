@@ -7,7 +7,7 @@ name = "coolname-hash"
 dynamic = ["version"]
 description = "Human-readable deterministic pseudo-hash, based on coolname"
 requires-python = ">= 3.10"
-dependencies = ["coolname==4.1.0"]
+dependencies = ["coolname>=4.1,<4.2"]
 license = "BSD-2-Clause"
 license-files = ["LICENSE"]
 authors = [{name = "Alexander Lukanin", email = "alexander.lukanin.13@gmail.com"}]
