@@ -1,4 +1,3 @@
-import struct
 from random import Random
 
 import coolname
@@ -10,7 +9,12 @@ from ._version import __version__, __version_tuple__  # noqa
 __all__ = ['RandomGenerator', 'generate', 'generate_slug', 'get_combinations_count', 'pseudohash', 'pseudohash_slug']
 
 
-_bytes_to_int = struct.Struct('<q').unpack
+try:
+    int.from_bytes(b'\xFF\xFF\xFF\xFF')
+    _bytes_to_int = int.from_bytes  # noqa
+except TypeError:  # pragma: no cover
+    import functools
+    _bytes_to_int = functools.partial(int.from_bytes, byteorder='big')  # noqa
 
 
 def _poor_mans_rng(seed: int, length: int):
@@ -42,7 +46,7 @@ class RandomGenerator(coolname.RandomGenerator):
             obj = str(obj).encode('utf8')
         elif not isinstance(obj, bytes):
             raise TypeError(f'Unexpected type "{type(obj).__qualname__}" (must be int, str or bytes): {obj!r}')
-        i = int.from_bytes(_md5(obj).digest()[:8]) % lst.length  # type: ignore
+        i = _bytes_to_int(_md5(obj).digest()[:8]) % lst.length  # type: ignore
         while True:
             result = lst[i]
             # 1. Check that there are no duplicates

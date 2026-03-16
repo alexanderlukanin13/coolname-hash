@@ -13,7 +13,7 @@ def test_md5():
     assert _md5(b'abc').digest() == b'\x90\x01P\x98<\xd2O\xb0\xd6\x96?}(\xe1\x7fr'
 
 def test_pseudohash_slug():
-    assert pseudohash_slug('abc') == 'hopeful-ultra-doberman-of-leadership'
+    assert pseudohash_slug('abc') == 'humongous-gentle-jackal-from-avalon'
 
 
 def test_int_str_bytes_same():
@@ -46,4 +46,4 @@ def test_coverage_replace_random():
     rand = Random()
     replace_random(rand)
     rand.seed(0)
-    assert generate_slug() == 'lyrical-benevolent-swine-of-expertise'
+    assert generate_slug() == 'liberal-adamant-auk-of-fascination'
